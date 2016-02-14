@@ -4,10 +4,14 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var multer = require('multer');
 
 var routes = require('./routes/index');
 
 var app = express();
+
+// Handle File Uploads & Multipart Data
+app.use(multer({ dest: './public/images/uploads'}).single('files'));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

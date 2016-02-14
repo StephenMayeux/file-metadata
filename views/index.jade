@@ -4,9 +4,9 @@ block content
   h1 Stephen's File Metadata Microservice
   p Use the form to upload a file. We'll tell you how many bytes it has!
   br
-  form(method='post', action='/posts/add', enctype='multipart/form-data')
+  form(method='post', action='/', enctype='multipart/form-data')
         .form-group
             label Your File: 
-            input.form-control(name='filetoupload', type='file')
+            input.form-control(name='files', type='file')
         input.btn.btn-default(name='submit', type='submit', value='Upload')
-  p The file you have uploaded has bytes.
+  p The file you have uploaded has #{bytes} bytes.
